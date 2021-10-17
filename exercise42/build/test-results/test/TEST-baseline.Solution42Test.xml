@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="baseline.Solution42Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-17T03:44:21" hostname="fedora" time="0.016">
-  <properties/>
-  <testcase name="csvParse()" classname="baseline.Solution42Test" time="0.016"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
