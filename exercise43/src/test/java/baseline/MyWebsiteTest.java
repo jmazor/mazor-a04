@@ -25,7 +25,7 @@ class MyWebsiteTest {
     @Test
     void createWebsite() {
         generatedSite.createWebsite();
-        File file = new File(generatedSite.getPathName());
+        File file = new File("./data/website/" + generatedSite.getSiteName());
         assertTrue(file.exists());
         deleteDirectory(file);
     }
@@ -33,8 +33,8 @@ class MyWebsiteTest {
     @Test
     void createIndex() {
         generatedSite.createWebsite();
-        File file = new File(generatedSite.getPathName() + "/index.html");
-        File dir = new File(generatedSite.getPathName());
+        File file = new File("./data/website/" + generatedSite.getSiteName() + "/index.html");
+        File dir = new File("./data/website/" + generatedSite.getSiteName());
         String expected = "<head>\n" +
                 "\t<meta name=\"author\" content=\"Justin\">\n" +
                 "</head>\n";
@@ -57,8 +57,8 @@ class MyWebsiteTest {
     @Test
     void createJSS() {
         generatedSite.createWebsite();
-        File dir = new File(generatedSite.getPathName());
-        File file = new File(generatedSite.getPathName() + "/js");
+        File dir = new File("./data/website/" + generatedSite.getSiteName());
+        File file = new File("./data/website/" + generatedSite.getSiteName() + "/js");
         assertTrue(file.exists());
         deleteDirectory(dir);
     }
@@ -66,8 +66,8 @@ class MyWebsiteTest {
     @Test
     void createCSS() {
         generatedSite.createWebsite();
-        File dir = new File(generatedSite.getPathName());
-        File file = new File(generatedSite.getPathName() + "/css");
+        File dir = new File("./data/website/" + generatedSite.getSiteName());
+        File file = new File("./data/website/" + generatedSite.getSiteName() + "/css");
         assertTrue(file.exists());
         deleteDirectory(dir);
 

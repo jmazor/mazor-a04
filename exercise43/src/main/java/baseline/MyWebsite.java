@@ -16,7 +16,6 @@ public class MyWebsite {
     private String author;
     private boolean javaScript;
     private boolean css;
-    private String pathName;
 
     public MyWebsite() {
         // create Scanner
@@ -36,15 +35,12 @@ public class MyWebsite {
         css = temp.equals("y") || temp.equals("Y") || temp.equals("Yes") || temp.equals("yes") || temp.equals("YES");
         String userDirectory = System.getProperty("user.dir");
 
-        pathName =  userDirectory + "/website/" + siteName;
 
     }
 
     // testing Constructor
     public MyWebsite(String siteName, String author, boolean javaScript, boolean css) {
-        String userDirectory = System.getProperty("user.dir");
 
-        pathName =  userDirectory + "/website/" + siteName;
         this.siteName = siteName;
         this.author = author;
         this.javaScript = javaScript;
@@ -60,7 +56,7 @@ public class MyWebsite {
 
 
     private void createDir() {
-        File newDir = new File(pathName);
+        File newDir = new File("./data/website/" + siteName);
         boolean bool = newDir.mkdirs();
         if (bool) {
             System.out.println(CREATE_SUCCESS + siteName);
@@ -72,7 +68,8 @@ public class MyWebsite {
     private void createIndex() {
         // create Index with <title> and <meta>
         // Create new file
-        try (FileWriter myWriter = new FileWriter(pathName + "/index.html")){
+        try (FileWriter myWriter = new FileWriter("./data/website/" + siteName +"/index.html"))
+        {
             myWriter.write("<head>\n");
             myWriter.write("\t<meta name=\"author\" content=\"" + author + "\">\n");
             myWriter.write("</head>\n");
@@ -87,7 +84,7 @@ public class MyWebsite {
 
     private void createCSS() {
         if(css) {
-            File cssDir = new File(pathName + "/css");
+            File cssDir = new File("./data/website/" + siteName + "/css");
             boolean bool = cssDir.mkdirs();
             if (bool) {
                 System.out.println(CREATE_SUCCESS + siteName + "/css/") ;
@@ -99,7 +96,7 @@ public class MyWebsite {
 
     private void createJS() {
         if(javaScript) {
-            File cssDir = new File(pathName + "/js");
+            File cssDir = new File("./data/website/" + siteName + "/js");
             boolean bool = cssDir.mkdirs();
             if (bool) {
                 System.out.println(CREATE_SUCCESS + siteName + "/js/") ;
@@ -109,7 +106,8 @@ public class MyWebsite {
         }
     }
 
-    public String getPathName() {
-        return pathName;
+    // testing function
+    public String getSiteName() {
+        return siteName;
     }
 }
