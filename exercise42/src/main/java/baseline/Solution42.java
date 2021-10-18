@@ -1,7 +1,5 @@
 package baseline;
 
-import java.util.List;
-import java.util.*;
 import java.io.*;
 
 /*

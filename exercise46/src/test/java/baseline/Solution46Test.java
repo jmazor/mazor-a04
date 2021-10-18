@@ -19,35 +19,30 @@ import static org.junit.jupiter.api.Assertions.*;
 class Solution46Test {
 
     @Test
-    void checkHistogram() {
+    void checkHistogramData() {
         File file = new File("./data/exercise46_input.txt");
+        boolean flag  = true;
         MyHistogram expected = new MyHistogram(file);
         int count = expected.getData().get("badger");
-        assertEquals(7,  count);
+        if (count != 7)
+            flag = false;
+        count = expected.getData().get("mushroom");
+        if (count != 2)
+            flag = false;
+        count = expected.getData().get("snake");
+        if (count != 1)
+            flag = false;
+        assertTrue(flag);
     }
 
     @Test
-    void checkMushroom() {
+    void checkHistogramSize() {
         File file = new File("./data/exercise46_input.txt");
+        boolean flag  = true;
         MyHistogram expected = new MyHistogram(file);
-        int count = expected.getData().get("mushroom");
-        assertEquals(2,  count);
+        assertEquals(3, expected.getData().size());
     }
-    @Test
-    void checkSnake() {
-        File file = new File("./data/exercise46_input.txt");
-        MyHistogram expected = new MyHistogram(file);
-        int count = expected.getData().get("snake");
-        assertEquals(1,  count);
-    }
-
-    @Test
-    void ensureSize() {
-        File file = new File("./data/exercise46_input.txt");
-        MyHistogram expected = new MyHistogram(file);
-        assertEquals(3,  expected.getData().size());
-    }
-
+    
 }
 
 
