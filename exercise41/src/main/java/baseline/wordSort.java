@@ -2,6 +2,8 @@ package baseline;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class wordSort {
@@ -33,11 +35,18 @@ public class wordSort {
     }
 
     public void printList() {
-        System.out.println("Total of " + words.size() + " names");
-        System.out.println("-----------------");
-        for(String x : words) {
-            System.out.println(x);
+        try (FileWriter myWriter = new FileWriter("./data/exercise41_output.txt")) {
+            myWriter.write("Total of " + words.size() + " names\n");
+            myWriter.write("-----------------\n");
+            for (String x : words) {
+                myWriter.write(x + "\n");
+            }
+
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
+
     }
 
     public List<String> getWords() {
