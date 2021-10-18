@@ -7,9 +7,12 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solutions
+ *  Copyright 2021 Justin Mazor
+ */
 
 // THIS TEST LEAVES BEHIND THE /website FOLDER ON PURPOSE
-
 class MyWebsiteTest {
     MyWebsite generatedSite = new MyWebsite("mySite", "Justin", true, true);
     boolean deleteDirectory(File directoryToBeDeleted) {
@@ -35,9 +38,15 @@ class MyWebsiteTest {
         generatedSite.createWebsite();
         File file = new File("./data/website/" + generatedSite.getSiteName() + "/index.html");
         File dir = new File("./data/website/" + generatedSite.getSiteName());
-        String expected = "<head>\n" +
+        String expected = "<!DOCTYPE html>\n" +
+                "<html>\n" +
+                "<head>\n" +
+                "\t<title> \"mySite\" </title>\n" +
                 "\t<meta name=\"author\" content=\"Justin\">\n" +
-                "</head>\n";
+                "</head>\n" +
+                "<body>\n" +
+                "</body>\n" +
+                "</html>\n";
         String actual = "";
         try {
             Scanner myReader = new Scanner(file);

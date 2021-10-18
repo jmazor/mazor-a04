@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class MyWebsite {
     static final String CREATE_SUCCESS = "Created: ./website/";
     static final String CREATE_FAILURE = "File already exists.";
+    static final String RELATIVE_PATH = "./data/website/";
 
     private String siteName;
     private String author;
@@ -24,7 +25,7 @@ public class MyWebsite {
         System.out.print("Site Name: ");
         siteName = sc.nextLine();
         // ask for author name
-        System.out.print("Author ");
+        System.out.print("Author: ");
         author = sc.nextLine();
         // ask if javascript should be created
         System.out.print("Do you want a folder for JavaScript? ");
@@ -33,8 +34,6 @@ public class MyWebsite {
         System.out.print("Do you want a folder for CSS? ");
         temp = sc.nextLine();
         css = temp.equals("y") || temp.equals("Y") || temp.equals("Yes") || temp.equals("yes") || temp.equals("YES");
-        String userDirectory = System.getProperty("user.dir");
-
 
     }
 
@@ -56,7 +55,7 @@ public class MyWebsite {
 
 
     private void createDir() {
-        File newDir = new File("./data/website/" + siteName);
+        File newDir = new File(RELATIVE_PATH + siteName);
         boolean bool = newDir.mkdirs();
         if (bool) {
             System.out.println(CREATE_SUCCESS + siteName);
@@ -68,11 +67,17 @@ public class MyWebsite {
     private void createIndex() {
         // create Index with <title> and <meta>
         // Create new file
-        try (FileWriter myWriter = new FileWriter("./data/website/" + siteName +"/index.html"))
+        try (FileWriter myWriter = new FileWriter(RELATIVE_PATH + siteName +"/index.html"))
         {
+            myWriter.write("<!DOCTYPE html>\n");
+            myWriter.write("<html>\n");
             myWriter.write("<head>\n");
+            myWriter.write("\t<title> \"" + siteName + "\" </title>\n");
             myWriter.write("\t<meta name=\"author\" content=\"" + author + "\">\n");
             myWriter.write("</head>\n");
+            myWriter.write("<body>\n");
+            myWriter.write("</body>\n");
+            myWriter.write("</html>\n");
             System.out.println(CREATE_SUCCESS + siteName + "/index.html");
         } catch (IOException e) {
             System.out.println("An error occurred.");
@@ -84,7 +89,7 @@ public class MyWebsite {
 
     private void createCSS() {
         if(css) {
-            File cssDir = new File("./data/website/" + siteName + "/css");
+            File cssDir = new File(RELATIVE_PATH+ siteName + "/css");
             boolean bool = cssDir.mkdirs();
             if (bool) {
                 System.out.println(CREATE_SUCCESS + siteName + "/css/") ;
@@ -96,7 +101,7 @@ public class MyWebsite {
 
     private void createJS() {
         if(javaScript) {
-            File cssDir = new File("./data/website/" + siteName + "/js");
+            File cssDir = new File(RELATIVE_PATH + siteName + "/js");
             boolean bool = cssDir.mkdirs();
             if (bool) {
                 System.out.println(CREATE_SUCCESS + siteName + "/js/") ;

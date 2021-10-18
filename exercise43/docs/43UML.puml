@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Class MyWebsite {
+  - String siteName
+    - String author
+    - boolean javaScript
+    - boolean css
+    +MyWebsite()
+    +createWebsite()
+    +createDir()
+    +createIndex()
+    +createCSS()
+    +createJS()
+    +getSiteName()
+}
+
+@enduml
