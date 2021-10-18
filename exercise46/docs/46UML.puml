@@ -1,0 +1,9 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+class Solution46 {
++createHistogram()
++printMap(Map<String, Integer>)
+}
+@enduml

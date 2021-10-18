@@ -69,7 +69,7 @@ public class Solution46 {
 
 
     public static void main(String[] args) {
-        File file = new File("exercise46_input.txt");
+        File file = new File("./data/exercise46_input.txt");
         Map<String, Integer> wordCount = createHistogram(file);
         printMap(wordCount);
     }
