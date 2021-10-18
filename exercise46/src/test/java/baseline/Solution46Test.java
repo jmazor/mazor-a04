@@ -21,31 +21,31 @@ class Solution46Test {
     @Test
     void checkHistogram() {
         File file = new File("./data/exercise46_input.txt");
-        Map<String, Integer> actual = Solution46.createHistogram(file);
-        int count = actual.get("badger");
+        MyHistogram expected = new MyHistogram(file);
+        int count = expected.getData().get("badger");
         assertEquals(7,  count);
     }
 
     @Test
     void checkMushroom() {
         File file = new File("./data/exercise46_input.txt");
-        Map<String, Integer> actual = Solution46.createHistogram(file);
-        int count = actual.get("mushroom");
+        MyHistogram expected = new MyHistogram(file);
+        int count = expected.getData().get("mushroom");
         assertEquals(2,  count);
     }
     @Test
     void checkSnake() {
         File file = new File("./data/exercise46_input.txt");
-        Map<String, Integer> actual = Solution46.createHistogram(file);
-        int count = actual.get("snake");
+        MyHistogram expected = new MyHistogram(file);
+        int count = expected.getData().get("snake");
         assertEquals(1,  count);
     }
 
     @Test
     void ensureSize() {
         File file = new File("./data/exercise46_input.txt");
-        Map<String, Integer> actual = Solution46.createHistogram(file);
-        assertEquals(3,  actual.size());
+        MyHistogram expected = new MyHistogram(file);
+        assertEquals(3,  expected.getData().size());
     }
 
 }

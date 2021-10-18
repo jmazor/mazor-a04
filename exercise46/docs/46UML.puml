@@ -2,8 +2,9 @@
 'https://plantuml.com/sequence-diagram
 
 
-class Solution46 {
-+createHistogram()
-+printMap(Map<String, Integer>)
+class MyHistogram {
+-Map<String, Integer> data
++MyHistogram()
++printMap()
 }
 @enduml
