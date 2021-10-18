@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class wordSort {
+- List<String> words
+ +wordSort()
+ +wordSort(String input)
+ +sort()
+ +printList()
+ +getWords()
+}
+
+
+
+
+
+
+@enduml

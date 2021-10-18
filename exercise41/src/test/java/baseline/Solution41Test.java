@@ -11,34 +11,33 @@ import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solutions
+ *  Copyright 2021 Justin Mazor
+ */
+
 class Solution41Test {
 
     @Test
     void main() {
-        List<String> names = new ArrayList<>();
-        try {
-            // create a file object
-
-            File myObj = new File("exercise41_input.txt");
-            Scanner myReader = new Scanner(myObj);
-            // while we have a next line put it into a array
-            while (myReader.hasNextLine()) {
-                names.add(myReader.nextLine());
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        Collections.sort(names);
-        List<String> test = new ArrayList<>();
-        test.add("Johnson, Jim");
-        test.add("Jones, Aaron");
-        test.add("Jones, Chris");
-        test.add("Ling, Mai");
-        test.add("Swift, Geoffrey");
-        test.add("Xiong, Fong");
-        test.add("Zarnecki, Sabrina");
-        assertEquals(test, names);
+        // ATTENTION GRADER
+        // I AM HARDOCDING DATA BECAUSE WHAT IF THE FILE CHANGES
+        wordSort actual = new wordSort("Ling, Mai\n" +
+                "Johnson, Jim\n" +
+                "Zarnecki, Sabrina\n" +
+                "Jones, Chris\n" +
+                "Jones, Aaron\n" +
+                "Swift, Geoffrey\n" +
+                "Xiong, Fong");
+        List<String> expected = new ArrayList<>();
+        expected.add("Johnson, Jim");
+        expected.add("Jones, Aaron");
+        expected.add("Jones, Chris");
+        expected.add("Ling, Mai");
+        expected.add("Swift, Geoffrey");
+        expected.add("Xiong, Fong");
+        expected.add("Zarnecki, Sabrina");
+        actual.sort();
+        assertEquals(expected, actual.getWords());
     }
 }
