@@ -1,32 +1,17 @@
 package baseline;
 
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solutions
+ *  Copyright 2021 Justin Mazor
+ */
+
+import java.io.File;
+
 public class Solution44 {
     public static void main(String[] args) {
-        // init ProductSearch
-        // call askSearch
+        File input =  new File("./data/exercise44_input.txt");
+        ProductSearch products = new ProductSearch(input);
+        products.askForProduct();
     }
-}
-
-public class MyProduct {
-    //String Name
-    //Double Price
-    //Int Quanitity
-
-
-}
-
-public class ProductSearch {
-    // List of MyProduct
-
-    // askSearchMethod
-    //ask for product name until a result is achieved
-    // call actualSearch
-
-    // parseData
-    // use gson to parse data
-
-    // actualSearch
-    // loop through list testing if Name equals input
-    // if equals return MyProduct
 }
 
