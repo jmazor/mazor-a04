@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class MyParser {
+    -List<List<String>> inputData
+    +MyParser(File)
+    +MyParser(String)
+    +csvParse(String)
+    +printList()
+    +getInputData()
+}
+@enduml
