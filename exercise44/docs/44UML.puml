@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+ProductSearch<-MyProduct
+class ProductSearch {
+    -List<MyProduct> products
+    +ProductSearch(File file)
+    +ProductSearch(String input)
+     +deSerializeData(String input)
+    +askForProduct()
+    +findProduct(String compare)
+   +getProducts()
+}
+
+    class MyProduct {
+        -String name
+        -double price
+        -int quantity
+       +MyProduct(String name, double price, int quantity)
+        +getName()
+        +getPrice()
+       +getQuantity()
+       +compare()
+
+}
+
+@enduml

@@ -63,11 +63,11 @@ public class ProductSearch {
 
 
 
-    private List<MyProduct> products= new ArrayList<>();
+    private List<MyProduct> products;
 
     public ProductSearch(File file) {
         String input = "";
-
+        products = new ArrayList<>();
         try {
             // create a file object
             Scanner myReader = new Scanner(file);
@@ -86,6 +86,7 @@ public class ProductSearch {
 
     // testing constructor
     public ProductSearch(String input) {
+        products = new ArrayList<>();
         deSerializeData(input);
     }
 
